@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.progress-block-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px;
+}
+
+.progress-block {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.35s;
+}
+
+.progress-circle {
+    transform: rotate(-90deg);
+}
+
+.progress {
+    transition: stroke-dashoffset 0.35s;
+}
+
+.animate {
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.progress-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.progress-control{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.progress-controls label {
+    margin: 5px 0;
+}
+
+.progress-value {
+    appearance: none;
+    width: 40px;
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 20px;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.progress-value:focus {
+    outline: none;
+    border-color: #0852ad;
+}
+
+.progress-animate, .progress-hide {
+    appearance: none;
+    width: 40px;
+    height: 20px;
+    background: #c7dbe7;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.3s;
+}
+
+.progress-animate:checked, .progress-hide:checked {
+    background: #0852ad;
+}
+
+.progress-animate::after, .progress-hide::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.progress-animate:checked::after, .progress-hide:checked::after {
+    transform: translateX(20px);
+}
+
+@media (max-width: 568px) {
+    .progress-block-container{
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+}
