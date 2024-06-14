@@ -1,7 +1,7 @@
 class ProgressBlock {
     constructor(container, options = {}) {
         this.container = container;
-        this.color = options.color || '#0852ad';
+        this.color = options.color || '#005CFF';
         this.size = parseInt(options.size, 10) || 100;
         this.createProgressBlock();
         this.value = 0;
