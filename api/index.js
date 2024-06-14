@@ -12,26 +12,30 @@ class ProgressBlock {
 
     createProgressBlock() {
         this.container.innerHTML = `
-            <div class="progress-block" style="width: ${this.size}px; height: ${this.size}px;">
-                <svg class="progress-circle" width="${this.size}" height="${this.size}">
-                    <circle cx="${this.size / 2}" cy="${this.size / 2}" r="${this.size / 2 - 5}" stroke="#ddd" stroke-width="10" fill="none"></circle>
-                    <circle class="progress" cx="${this.size / 2}" cy="${this.size / 2}" r="${this.size / 2 - 5}" stroke="${this.color}" stroke-width="10" fill="none"></circle>
-                </svg>
+            <h3 class="progress-title">Progress</h3>
+            <div class="progress-frame">
+                <div class="progress-block" style="width: ${this.size}px; height: ${this.size}px;">
+                    <svg class="progress-circle" width="${this.size}" height="${this.size}">
+                        <circle cx="${this.size / 2}" cy="${this.size / 2}" r="${this.size / 2 - 5}" stroke="#ddd" stroke-width="10" fill="none"></circle>
+                        <circle class="progress" cx="${this.size / 2}" cy="${this.size / 2}" r="${this.size / 2 - 5}" stroke="${this.color}" stroke-width="10" fill="none"></circle>
+                    </svg>
+                </div>
+                <div class="progress-controls">
+                    <div class="progress-control">
+                        <label for="value">Value</label>
+                        <input type="number" class="progress-value" name="value" min="0" max="100" value="0">
+                    </div>
+                    <div class="progress-control">
+                        <label for="animate">Animate</label>
+                        <input type="checkbox" class="progress-animate" name="animate">
+                    </div>
+                    <div class="progress-control">
+                        <label for="hide">Hide</label>
+                        <input type="checkbox" class="progress-hide" name="hide">
+                    </div>
+                </div>
             </div>
-            <div class="progress-controls">
-                <div class="progress-control">
-                    <label for="value">Value</label>
-                    <input type="number" class="progress-value" name="value" min="0" max="100" value="0">
-                </div>
-                <div class="progress-control">
-                    <label for="animate">Animate</label>
-                    <input type="checkbox" class="progress-animate" name="animate">
-                </div>
-                <div class="progress-control">
-                    <label for="hide">Hide</label>
-                    <input type="checkbox" class="progress-hide" name="hide">
-                </div>
-            </div>
+            
         `;
 
         this.progressBlock = this.container.querySelector('.progress-block');
